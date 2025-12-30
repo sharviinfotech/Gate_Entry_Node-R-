@@ -33,6 +33,7 @@ module.exports = (() => {
     fetch_Exit_Cancel: (req, res) => externalApiMethods.fetch_Exit_Cancel(req.body, res),
     save_Exit_Cancel: (req, res) => externalApiMethods.save_Exit_Cancel(req.body, res),
     UserEdit: (req, res) => externalApiMethods.UserEdit(req.body, res),
+    submit_Login: (req, res) => externalApiMethods.login_Submit(req.body, res),
 
 
 

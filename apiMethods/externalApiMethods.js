@@ -487,6 +487,31 @@ module.exports = (() => {
         res.status(500).json({ error: "fetch change Gate Entry" });
       }
     },
+     login_Submit: async (body, res) => {
+      try {
+        console.log(
+          "login",
+          JSON.stringify(body, null, 2)
+        );
+        const response = await sapAxios.post(
+          config.THIRD_PARTY_API_URL_POST_User_Login_Authentication,
+          body,
+          {
+            headers: {
+              Authorization: getAuthHeader()
+            }
+          }
+        );
+        console.log(
+          "fetch GE",
+          JSON.stringify(response.data, null, 2)
+        );
+        res.json(response.data);
+      } catch (error) {
+        handleAxiosError(error, "fetch change Gate Entry");
+        res.status(500).json({ error: "fetch change Gate Entry" });
+      }
+    },
  
 
     productionPlanningSave: async (req, res) => {
