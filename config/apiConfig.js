@@ -27,6 +27,7 @@ module.exports = (() => {
     THIRD_PARTY_API_URL_GET_DisplayTable: `${baseUrl}/gate_entry/login/login?sap-client=300`,
     THIRD_PARTY_API_URL_POST_Edit: `${baseUrl}/gate_entry/login/login?sap-client=300`,
     THIRD_PARTY_API_URL_POST_User_Login_Authentication: `${baseUrl}/gate_entry/login/login?sap-client=300`,
+    THIRD_PARTY_API_URL_PUT_User_RoleCeation: `${baseUrl}/gate_entry/login/login?sap-client=300`,
 
 
   };

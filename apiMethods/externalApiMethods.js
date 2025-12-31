@@ -436,7 +436,7 @@ module.exports = (() => {
         res.status(500).json({ error: "fetch change Gate Entry" });
       }
     },
-   save_Exit_Cancel: async (body, res) => {
+    save_Exit_Cancel: async (body, res) => {
       try {
         console.log(
           "GE F",
@@ -462,7 +462,7 @@ module.exports = (() => {
       }
     },
 
- UserEdit: async (body, res) => {
+    UserEdit: async (body, res) => {
       try {
         console.log(
           "GE F",
@@ -487,7 +487,7 @@ module.exports = (() => {
         res.status(500).json({ error: "fetch change Gate Entry" });
       }
     },
-     login_Submit: async (body, res) => {
+    login_Submit: async (body, res) => {
       try {
         console.log(
           "login",
@@ -512,7 +512,32 @@ module.exports = (() => {
         res.status(500).json({ error: "fetch change Gate Entry" });
       }
     },
- 
+
+    UserRoleCreation: async (body, res) => {
+      try {
+        console.log(
+          "GE F",
+          JSON.stringify(body, null, 2)
+        );
+        const response = await sapAxios.put(
+          config.THIRD_PARTY_API_URL_PUT_User_RoleCeation,
+          body,
+          {
+            headers: {
+              Authorization: getAuthHeader()
+            }
+          }
+        );
+        console.log(
+          "fetch GE",
+          JSON.stringify(response.data, null, 2)
+        );
+        res.json(response.data);
+      } catch (error) {
+        handleAxiosError(error, "fetch change Gate Entry");
+        res.status(500).json({ error: "fetch change Gate Entry" });
+      }
+    },
 
     productionPlanningSave: async (req, res) => {
       try {
