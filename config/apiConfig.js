@@ -28,6 +28,10 @@ module.exports = (() => {
     THIRD_PARTY_API_URL_POST_Edit: `${baseUrl}/gate_entry/login/login?sap-client=300`,
     THIRD_PARTY_API_URL_POST_User_Login_Authentication: `${baseUrl}/gate_entry/login/login?sap-client=300`,
     THIRD_PARTY_API_URL_PUT_User_RoleCeation: `${baseUrl}/gate_entry/login/login?sap-client=300`,
+    THIRD_PARTY_API_URL_PUT_User_RoleEdit: `${baseUrl}/gate_entry/login/login?sap-client=300`,
+    THIRD_PARTY_API_URL_GET_User_RoleDisplay: `${baseUrl}/gate_entry/report/list?sap-client=300`,
+    THIRD_PARTY_API_URL_GET_User_plant: `${baseUrl}/gate_entry/f4/list?sap-client=300`,
+    THIRD_PARTY_API_URL_PUT_User_Role: `${baseUrl}/gate_entry/f4/list?sap-client=300`,
 
 
   };

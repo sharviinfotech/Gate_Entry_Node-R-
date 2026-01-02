@@ -35,6 +35,10 @@ module.exports = (() => {
     UserEdit: (req, res) => externalApiMethods.UserEdit(req.body, res),
     submit_Login: (req, res) => externalApiMethods.login_Submit(req.body, res),
     UserRoleCreation: (req, res) => externalApiMethods.UserRoleCreation(req.body, res),
+    UserRoleEdit: (req, res) => externalApiMethods.UserRoleEdit(req.body, res),
+    UserRoleDisplay: (req, res) => externalApiMethods.UserRoleDisplay(req.body, res),
+    UserPlant: (req, res) => externalApiMethods.UserPlant(req.body, res),
+    UserRole: (req, res) => externalApiMethods.UserRole(req.body, res),
 
 
 

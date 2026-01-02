@@ -41,6 +41,10 @@ module.exports = (() => {
   router.post('/Gate_Entry/EditUser', externalApiHandler.UserEdit);
   router.post('/Gate_Entry/Login_Submit_Authentication', externalApiHandler.submit_Login);
   router.put('/Gate_Entry/UserRoleCreation', externalApiHandler.UserRoleCreation);
+  router.put('/Gate_Entry/UserRoleEdit', externalApiHandler.UserRoleEdit);
+  router.get('/Gate_Entry/UserRoleDisplay', externalApiHandler.UserRoleDisplay);
+  router.get('/Gate_Entry/UserPlant', externalApiHandler.UserPlant);
+  router.put('/Gate_Entry/UserRole', externalApiHandler.UserRole);
 
   return router;
 })();
