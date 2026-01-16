@@ -39,7 +39,7 @@ module.exports = (() => {
     UserRoleDisplay: (req, res) => externalApiMethods.UserRoleDisplay(req.body, res),
     UserPlant: (req, res) => externalApiMethods.UserPlant(req.body, res),
     UserRole: (req, res) => externalApiMethods.UserRole(req.body, res),
-
+    vendorListGet: (req, res) => externalApiMethods.vendorListGet(req.body, res),
 
 
   };

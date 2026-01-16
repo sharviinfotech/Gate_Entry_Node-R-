@@ -32,7 +32,7 @@ module.exports = (() => {
     THIRD_PARTY_API_URL_GET_User_RoleDisplay: `${baseUrl}/gate_entry/report/list?sap-client=300`,
     THIRD_PARTY_API_URL_GET_User_plant: `${baseUrl}/gate_entry/f4/list?sap-client=300`,
     THIRD_PARTY_API_URL_PUT_User_Role: `${baseUrl}/gate_entry/f4/list?sap-client=300`,
-
+    THIRD_PARTY_API_URL_GET_VendorList: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
 
   };
 })();

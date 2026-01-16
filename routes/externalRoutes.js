@@ -46,5 +46,8 @@ module.exports = (() => {
   router.get('/Gate_Entry/UserPlant', externalApiHandler.UserPlant);
   router.put('/Gate_Entry/UserRole', externalApiHandler.UserRole);
 
+  router.get('/Gate_Entry/VendorList', externalApiHandler.vendorListGet);
+
+  
   return router;
 })();

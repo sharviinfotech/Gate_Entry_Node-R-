@@ -513,6 +513,32 @@ module.exports = (() => {
       }
     },
 
+
+
+
+
+vendorListGet: async (req, res) => {
+  try {
+    const response = await axios.get(
+      config.THIRD_PARTY_API_URL_GET_VendorList,
+      {
+        headers: {
+          Authorization: getAuthHeader(),
+          Accept: 'application/json'
+        }
+      }
+    );
+
+    res.status(200).json(response.data);
+
+  } catch (error) {
+    console.error("VendorList error:", error.message);
+    res.status(500).json({ error: "Failed to process GET request" });
+  }
+},
+
+
+
     UserRoleCreation: async (body, res) => {
       try {
         console.log(
