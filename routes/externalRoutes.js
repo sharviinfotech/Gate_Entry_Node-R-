@@ -48,6 +48,8 @@ module.exports = (() => {
 
   router.get('/Gate_Entry/VendorList', externalApiHandler.vendorListGet);
 
+    router.put('/Gate_Entry/FetchVendorName', externalApiHandler.f4Vendorname);
+
   
   return router;
 })();

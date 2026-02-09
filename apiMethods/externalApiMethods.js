@@ -487,7 +487,68 @@ module.exports = (() => {
         res.status(500).json({ error: "fetch change Gate Entry" });
       }
     },
-    login_Submit: async (body, res) => {
+//  login_Submit: async (req, res) => {
+//   try {
+//     console.log("✅ API hit");
+//     console.log("📤 Request:", JSON.stringify(req.body, null, 2));
+
+//     const response = await sapAxios.post(
+//       config.THIRD_PARTY_API_URL_POST_User_Login_Authentication,
+//       req.body,
+//       {
+//         headers: {
+//           Authorization: getAuthHeader(),
+//           "Content-Type": "application/json",
+//         },
+//       }
+//     );
+
+//     console.log("✅ SAP Response:", JSON.stringify(response.data, null, 2));
+
+//     // ✅ Send SAP response directly (frontend expects USER, PLANTS, MESSAGE)
+//     return res.status(200).json(response.data);
+
+//   } catch (error) {
+//     console.error("❌ SAP ERROR");
+
+//     let message = "Unknown error";
+
+//     // 1️⃣ Timeout
+//     if (error.code === "ECONNABORTED") {
+//       message = "SAP timeout - no response from SAP";
+//     }
+
+//     // 2️⃣ SAP returned error
+//     else if (error.response) {
+//       console.error("SAP Status:", error.response.status);
+//       console.error("SAP Data:", error.response.data);
+
+//       return res.status(error.response.status).json({
+//         USER: null,
+//         MESSAGE: error.response.data?.MESSAGE || "SAP returned error",
+//       });
+//     }
+
+//     // 3️⃣ Network blocked
+//     else if (error.request) {
+//       message = "SAP server unreachable (Firewall blocked)";
+//     }
+
+//     // 4️⃣ Other error
+//     else {
+//       message = error.message;
+//     }
+
+//     // ✅ IMPORTANT: Always return same format for frontend
+//     return res.status(500).json({
+//       USER: null,
+//       MESSAGE: message,
+//     });
+//   }
+// },
+
+
+ login_Submit: async (body, res) => {
       try {
         console.log(
           "login",
@@ -512,7 +573,6 @@ module.exports = (() => {
         res.status(500).json({ error: "fetch change Gate Entry" });
       }
     },
-
 
 
 
@@ -656,6 +716,34 @@ vendorListGet: async (req, res) => {
         res.status(500).json({ error: "fetch change Gate Entry" });
       }
     },
+
+ vendorCodeF4FecthVendorName: async (body, res) => {
+      try {
+        console.log(
+          "GE F",
+          JSON.stringify(body, null, 2)
+        );
+        const response = await sapAxios.put(
+          config.THIRD_PARTY_API_URL_PUT_VendorName,
+          body,
+          {
+            headers: {
+              Authorization: getAuthHeader()
+            }
+          }
+        );
+        console.log(
+          "fetch GE",
+          JSON.stringify(response.data, null, 2)
+        );
+        res.json(response.data);
+      } catch (error) {
+        handleAxiosError(error, "fetch change Gate Entry");
+        res.status(500).json({ error: "fetch change Gate Entry" });
+      }
+    },
+
+
 
     productionPlanningSave: async (req, res) => {
       try {

@@ -40,6 +40,7 @@ module.exports = (() => {
     UserPlant: (req, res) => externalApiMethods.UserPlant(req.body, res),
     UserRole: (req, res) => externalApiMethods.UserRole(req.body, res),
     vendorListGet: (req, res) => externalApiMethods.vendorListGet(req.body, res),
+    f4Vendorname:(req, res) => externalApiMethods.vendorCodeF4FecthVendorName(req.body, res),
 
 
   };

@@ -4,7 +4,7 @@ module.exports = (() => {
     prod: "http://10.150.150.154:8103",
     dev: "http://10.150.150.154:8103",
   };
-  const login = "https://10.150.150.154:8103";
+  const login = "http://10.150.150.154:8103";
   const baseUrl = baseUrls[server];
 
   return {
@@ -33,6 +33,8 @@ module.exports = (() => {
     THIRD_PARTY_API_URL_GET_User_plant: `${baseUrl}/gate_entry/f4/list?sap-client=300`,
     THIRD_PARTY_API_URL_PUT_User_Role: `${baseUrl}/gate_entry/f4/list?sap-client=300`,
     THIRD_PARTY_API_URL_GET_VendorList: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
+    THIRD_PARTY_API_URL_PUT_VendorName: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
+
 
   };
 })();
