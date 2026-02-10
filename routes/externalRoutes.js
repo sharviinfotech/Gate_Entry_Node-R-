@@ -50,6 +50,8 @@ module.exports = (() => {
 
     router.put('/Gate_Entry/FetchVendorName', externalApiHandler.f4Vendorname);
 
+      router.post('/Gate_Entry/DashboardReports', externalApiHandler.DashboardReports);
+
   
   return router;
 })();

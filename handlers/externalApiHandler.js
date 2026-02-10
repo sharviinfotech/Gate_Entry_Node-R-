@@ -42,6 +42,8 @@ module.exports = (() => {
     vendorListGet: (req, res) => externalApiMethods.vendorListGet(req.body, res),
     f4Vendorname:(req, res) => externalApiMethods.vendorCodeF4FecthVendorName(req.body, res),
 
+    DashboardReports:(req, res) => externalApiMethods.DashboardReports(req.body, res),
+
 
   };
 })();
