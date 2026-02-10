@@ -1,21 +1,39 @@
 module.exports = (() => {
-  const server = process.env.SERVER || "dev"; //dev  //Set the server environment variable (default to 'dev')
-  const baseUrls = {
-    prod: "http://10.150.150.154:8103",
-    dev: "http://10.150.150.154:8103",
+  const server = process.env.SERVER || "dev"; // dev | qty | prod
+
+  const configs = {
+    dev: {
+      BASE_URL: "http://10.150.150.154:8103",
+      USERNAME: "SARVIINFO",
+      PASSWORD: "S!pl@2026",
+    },
+
+    qty: {
+      BASE_URL: "http://10.150.150.155:8005",
+      USERNAME: "SHARVI_INFO",
+      PASSWORD: "S!pl@2026",
+    },
+
+    prod: {
+      BASE_URL: "http://10.150.150.120:8103",
+      USERNAME: "PROD_USER",
+      PASSWORD: "PROD_PASSWORD",
+    },
   };
-  const login = "http://10.150.150.154:8103";
-  const baseUrl = baseUrls[server];
+
+  // ✅ SAFETY FALLBACK
+  const config = configs[server] || configs.dev;
+
+  // ✅ VERY IMPORTANT FIX
+  const baseUrl = config.BASE_URL;
 
   return {
-    // Credentials
-    THIRD_PARTY_USERNAME: process.env.THIRD_PARTY_USERNAME || "SARVIINFO", //"ims113"
-    THIRD_PARTY_PASSWORD: process.env.THIRD_PARTY_PASSWORD || "S!pl@2026", //"Sh@rv1511",
+    SERVER: server,
+    BASE_URL: baseUrl,
 
+    THIRD_PARTY_USERNAME: process.env.THIRD_PARTY_USERNAME || config.USERNAME,
+    THIRD_PARTY_PASSWORD: process.env.THIRD_PARTY_PASSWORD || config.PASSWORD,
 
-    // API Calls
-    THIRD_PARTY_API_URL_POST_LOGIN: `${login}/login/create?sap-client=234`,
-    // THIRD_PARTY_API_URL_POST_LOGIN: `${baseUrl}/login/create?sap-client=234
     ThirdParty_Fetch_Gate_Entry_Pdf: `${baseUrl}/gate_entry/print/pdf?sap-client=300`,
     ThirdParty_Fetch_Gate_Entry_Creation: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
     ThirdParty_Fetch_Gate_Entry_Change: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
@@ -34,9 +52,6 @@ module.exports = (() => {
     THIRD_PARTY_API_URL_PUT_User_Role: `${baseUrl}/gate_entry/f4/list?sap-client=300`,
     THIRD_PARTY_API_URL_GET_VendorList: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
     THIRD_PARTY_API_URL_PUT_VendorName: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
-
     THIRD_PARTY_API_URL_POST_DashboardReports: `${baseUrl}/gate_entry/report/list?sap-client=300`,
-
-
   };
 })();
