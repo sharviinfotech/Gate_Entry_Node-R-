@@ -43,6 +43,8 @@ module.exports = (() => {
     f4Vendorname:(req, res) => externalApiMethods.vendorCodeF4FecthVendorName(req.body, res),
 
     DashboardReports:(req, res) => externalApiMethods.DashboardReports(req.body, res),
+    InwardMaterialCode:(req, res) => externalApiMethods.InwardMaterialCode(req.body, res),
+    UOMGet:(req, res) => externalApiMethods.UOMGet(req.body, res),
 
 
   };

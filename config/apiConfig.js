@@ -53,5 +53,9 @@ module.exports = (() => {
     THIRD_PARTY_API_URL_GET_VendorList: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
     THIRD_PARTY_API_URL_PUT_VendorName: `${baseUrl}/gate_entry/process/gates?sap-client=300`,
     THIRD_PARTY_API_URL_POST_DashboardReports: `${baseUrl}/gate_entry/report/list?sap-client=300`,
+    THIRD_PARTY_API_URL_PUT_Inward_MaterialCode: `${baseUrl}/gate_entry/print/pdf?sap-client=300`,
+      THIRD_PARTY_API_URL_GET_UOM: `${baseUrl}/gate_entry/print/pdf?sap-client=300`,
+
+
   };
 })();

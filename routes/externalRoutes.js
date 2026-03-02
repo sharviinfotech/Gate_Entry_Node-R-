@@ -51,6 +51,8 @@ module.exports = (() => {
     router.put('/Gate_Entry/FetchVendorName', externalApiHandler.f4Vendorname);
 
       router.post('/Gate_Entry/DashboardReports', externalApiHandler.DashboardReports);
+  router.put('/Gate_Entry/Inward/Materialcode', externalApiHandler.InwardMaterialCode);
+  router.get('/Gate_Entry/UOMGet', externalApiHandler.UOMGet);
 
   
   return router;
