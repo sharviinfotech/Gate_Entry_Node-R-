@@ -45,6 +45,7 @@ module.exports = (() => {
     DashboardReports:(req, res) => externalApiMethods.DashboardReports(req.body, res),
     InwardMaterialCode:(req, res) => externalApiMethods.InwardMaterialCode(req.body, res),
     UOMGet:(req, res) => externalApiMethods.UOMGet(req.body, res),
+    UOM_Fetch:(req, res) => externalApiMethods.UOM_Fetch(req.body, res),
 
 
   };

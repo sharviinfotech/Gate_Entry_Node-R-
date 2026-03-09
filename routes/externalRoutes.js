@@ -52,7 +52,8 @@ module.exports = (() => {
 
       router.post('/Gate_Entry/DashboardReports', externalApiHandler.DashboardReports);
   router.put('/Gate_Entry/Inward/Materialcode', externalApiHandler.InwardMaterialCode);
-  router.get('/Gate_Entry/UOMGet', externalApiHandler.UOMGet);
+  router.get('/Gate_Entry/UOM', externalApiHandler.UOMGet);
+  router.post('/Gate_Entry/UOM_Fetch', externalApiHandler.UOM_Fetch);
 
   
   return router;

@@ -1192,6 +1192,27 @@ vendorListGet: async (req, res) => {
         res.status(500).json({ error: "Failed to process GET request" });
       }
     },
+      UOM_Fetch: async (body, res) => {
+      try {
+        // console.log(
+        //   "Sending GET payload to plant API:",
+        //   JSON.stringify(body, null, 2)
+        // );
+        const response = await axios.post(config.THIRD_PARTY_API_URL_POST_UOM_FETCH,body, {
+          headers: {
+            Authorization: getAuthHeader(),
+          },
+        });
+        // console.log(
+        //   "GET Response from plant API:",
+        //   JSON.stringify(response.data, null, 2)
+        // );
+        res.json(response.data);
+      } catch (error) {
+        handleAxiosError(error, "plant");
+        res.status(500).json({ error: "Failed to process post UOM request" });
+      }
+    },
 
   }
 
